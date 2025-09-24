@@ -74,6 +74,6 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.628695, 0, 0, 0, 0.0809071, 0, 0, 0, 0.647421, 0, 0.134188, 0)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.603417, 0, 0, 0, 0.0823759, 0, 0, 0, 0.567637, 0, 0.176455, -0.0122614)
 shape = SubResource("CylinderShape3D_qiomv")

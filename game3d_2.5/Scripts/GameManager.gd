@@ -16,3 +16,7 @@ func show_mouse_cursor():
 
 func add_score():
 	score += 1
+	
+func add_score2():
+	score += 9999
+	

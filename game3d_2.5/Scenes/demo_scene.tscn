@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://po63m4srixl4"]
+[gd_scene load_steps=20 format=3 uid="uid://po63m4srixl4"]
 
 [ext_resource type="PackedScene" uid="uid://0t0qb3qjq6my" path="res://Scenes/PlatformRed.tscn" id="2_4lh3q"]
 [ext_resource type="PackedScene" uid="uid://dfc0ecsjufu7v" path="res://Scenes/PlatformBlue.tscn" id="3_mj5wy"]
 [ext_resource type="Script" uid="uid://cb60ousyi73h8" path="res://Scripts/DeadZone.gd" id="4_8ry15"]
 [ext_resource type="PackedScene" uid="uid://bk5n0tn4k1l0c" path="res://Scenes/Coin.tscn" id="5_4fiv6"]
+[ext_resource type="PackedScene" uid="uid://bjqdt44gejjoe" path="res://Scenes/Island.tscn" id="5_8ep1j"]
 [ext_resource type="PackedScene" uid="uid://b86efbihidooo" path="res://Assets/Models/Tree.glb" id="5_ad2i4"]
 [ext_resource type="PackedScene" uid="uid://cyvoha8pscrpv" path="res://Assets/Models/Grass.glb" id="6_3tqca"]
 [ext_resource type="Script" uid="uid://dao80u2u6tiw0" path="res://Scripts/GameManager.gd" id="6_8fvkd"]
@@ -12,12 +13,11 @@
 [ext_resource type="Script" uid="uid://kwqelxhlc7u1" path="res://Scripts/GameUI.gd" id="7_x8whp"]
 [ext_resource type="PackedScene" uid="uid://caqspxcjgaxp4" path="res://Scenes/grass_platform.tscn" id="10_ad2i4"]
 [ext_resource type="PackedScene" uid="uid://c7aanwb8443kn" path="res://Scenes/player/ChickenGuy.tscn" id="10_okl2h"]
+[ext_resource type="Script" uid="uid://riy24ltgv24y" path="res://Scenes/coin2.gd" id="10_tse6v"]
 
 [sub_resource type="Environment" id="Environment_okl2h"]
-background_mode = 3
-
-[sub_resource type="SystemFont" id="SystemFont_om7om"]
-font_names = PackedStringArray("Star Choco")
+background_mode = 1
+background_color = Color(0.564962, 0.564962, 0.564962, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_asf4q"]
 size = Vector3(128, 17, 112)
@@ -42,34 +42,73 @@ transform = Transform3D(0.606613, 0, 0, 0, 0.606613, 0, 0, 0, 0.606613, 0, 4.590
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="PlatformRed" parent="Platforms" instance=ExtResource("2_4lh3q")]
-transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 3, 0.00302696)
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, -0.493963, 3.0462, 0.00341987)
+layers = 2
 
 [node name="PlatformRed2" parent="Platforms" instance=ExtResource("2_4lh3q")]
-transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 9.02, 6, -20.997)
-visible = false
+transform = Transform3D(3.9312, 0, 0, 0, -1.71838e-08, -3.9312, 0, 0.39312, -1.71838e-07, 0.0200105, 6.68027, -4.1316)
+layers = 2
 
 [node name="PlatformRed3" parent="Platforms" instance=ExtResource("2_4lh3q")]
-transform = Transform3D(5.30712, 0, 0, 0, 0.530712, 0, 0, 0, 5.30712, 18.02, 9, 2.00303)
-visible = false
+transform = Transform3D(3.9312, 0, 0, 0, -1.71838e-08, 3.9312, 0, -0.39312, -1.71838e-07, 0.0200105, 6.68027, 4.33787)
+layers = 2
+
+[node name="PlatformRed4" parent="Platforms" instance=ExtResource("2_4lh3q")]
+transform = Transform3D(-1.71838e-07, 0.39312, 0, -3.9312, -1.71838e-08, 0, 0, 0, 3.9312, -3.99713, 6.68027, 0.208512)
+layers = 2
 
 [node name="PlatformBlue" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 0, 3, -11)
-visible = false
+transform = Transform3D(2.23811, 0, 0, 0, 0.460714, 0, 0, 0, 1.97482, 7.41358, -32.6492, -11)
 
 [node name="PlatformBlue2" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 0, 4.01868, -21.7155)
-visible = false
+transform = Transform3D(2.23811, 0, 0, 0, 0.460714, 0, 0, 0, 1.97482, 7.41358, -32.6492, -3.35485)
 
 [node name="PlatformBlue3" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 18, 7.01868, -20.7155)
-visible = false
+transform = Transform3D(2.23811, 0, 0, 0, 0.460714, 0, 0, 0, 1.97482, 15.1629, -34.9025, -3.35485)
 
 [node name="PlatformBlue4" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 18, 8.01868, -9.71549)
-visible = false
+transform = Transform3D(2.23811, 0, 0, 0, 0.460714, 0, 0, 0, 1.97482, 22.1915, -37.6691, -3.35485)
 
-[node name="GrassPlatform_Cylinder_001" parent="Platforms" instance=ExtResource("10_ad2i4")]
-transform = Transform3D(38.3211, 0, 0, 0, 1, 0, 0, 0, 41.7873, 16.3474, 3.08211, -2.20562)
+[node name="GrassPlatform0" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(38.3211, 0, 0, 0, 1, 0, 0, 0, 41.7873, 8.92983, 3.0023, -2.24104)
+layers = 2
+
+[node name="GrassPlatform" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(38.3211, 0, 0, 0, 1, 0, 0, 0, 41.7873, 16.3144, 3.0023, -2.24104)
+layers = 2
+
+[node name="GrassPlatform2" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(11.9513, 0, 0, 0, 8.60759, 0, 0, 0, 13.0323, 32.4025, 2.48954, 0.808508)
+
+[node name="GrassPlatform3" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(11.9513, 0, 0, 0, 8.60759, 0, 0, 0, 13.0323, 32.6058, 4.41549, 10.0036)
+
+[node name="GrassPlatform4" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(11.9513, 0, 0, 0, 8.60759, 0, 0, 0, 13.0323, 32.6058, 6.00296, 18.4998)
+
+[node name="GrassPlatform5" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(11.9513, 0, 0, 0, 8.60759, 0, 0, 0, 13.0323, 23.9825, 7.56449, 18.7778)
+
+[node name="GrassPlatform6" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(11.9513, 0, 0, 0, 8.60759, 0, 0, 0, 13.0323, 15.7723, 8.94904, 18.7778)
+
+[node name="GrassPlatform7" parent="Platforms" instance=ExtResource("10_ad2i4")]
+transform = Transform3D(6.26379, 0, 0, 0, 4.51131, 0, 0, 0, 6.83035, 7.62806, 8.94904, 18.7778)
+
+[node name="Island1" parent="Platforms" instance=ExtResource("5_8ep1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9226, 2.17631, -17.6233)
+
+[node name="Island2" parent="Platforms" instance=ExtResource("5_8ep1j")]
+transform = Transform3D(0.68561, 0, 0, 0, 0.68561, 0, 0, 0, 0.68561, 16.9226, 2.17631, -20.4342)
+
+[node name="Island3" parent="Platforms" instance=ExtResource("5_8ep1j")]
+transform = Transform3D(0.433542, 0, 0, 0, 0.433542, 0, 0, 0, 0.433542, 16.9226, 2.17631, -24.0876)
+
+[node name="Island4" parent="Platforms" instance=ExtResource("5_8ep1j")]
+transform = Transform3D(0.238441, 0, 0, 0, 0.238441, 0, 0, 0, 0.238441, 16.9226, 2.17631, -27.8603)
+
+[node name="Island5" parent="Platforms" instance=ExtResource("5_8ep1j")]
+transform = Transform3D(0.236118, 0, 0, 0, 0.236118, 0, 0, 0, 0.236118, 16.9312, 2.04528, -32.6087)
 
 [node name="tree" type="Node3D" parent="."]
 
@@ -103,6 +142,7 @@ environment = SubResource("Environment_okl2h")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(-0.898603, 0.438763, 6.07673e-08, -0.0534716, -0.109512, 0.992546, 0.435492, 0.891905, 0.121869, 9.04457, 6.63937, -28.4749)
 shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="Extras" type="Node3D" parent="."]
 
@@ -111,23 +151,38 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="Features" type="Label3D" parent="Extras"]
-transform = Transform3D(0.387789, 0, 0.921748, 0, 1, 0, -0.921748, 0, 0.387789, -14.0511, 5.78537, -6.67751)
-text = "Features:
-Working Controller
-Double Jump
-Basic Score System
-Animations"
-font = SubResource("SystemFont_om7om")
+transform = Transform3D(0.00286236, -6.65676e-11, -0.999996, 0.00614348, 0.999981, 1.75849e-05, 0.999977, -0.00614356, 0.00286231, 20.2268, 4.11994, -15.6717)
+modulate = Color(1, 1, 0.376471, 1)
+text = "<- มีเหรียญทอง9999อยู่ลองไปดูสิ"
+font = ExtResource("6_ad2i4")
 font_size = 250
 outline_size = 0
 uppercase = true
 
 [node name="Credits" type="Label3D" parent="Extras"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0336823, 4.71136, 8.82437)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0336823, 4.71136, 3.61655)
 text = "673380287-8
 นายพีรพล แก้วเจริยสันติสุข"
 font = ExtResource("6_ad2i4")
 font_size = 100
+outline_size = 0
+uppercase = true
+
+[node name="Features2" type="Label3D" parent="Extras"]
+transform = Transform3D(0.99876, -0.0061369, 0.0494075, 0.00614348, 0.999981, 1.75849e-05, -0.0494067, 0.000285973, 0.998779, 10.0288, -20.5491, -16.5559)
+modulate = Color(0.682247, 0.0322002, 0.15836, 1)
+text = "ไม่มีหรอกไอเทมลับอะไรอ่ะ มีแค่นี้แหละ"
+font = ExtResource("6_ad2i4")
+font_size = 500
+outline_size = 0
+uppercase = true
+
+[node name="Features3" type="Label3D" parent="Extras"]
+transform = Transform3D(0.99876, -0.0061369, 0.0494075, 0.00614348, 0.999981, 1.75849e-05, -0.0494067, 0.000285973, 0.998779, 10.0288, 5.33902, -16.5559)
+modulate = Color(0.719113, 0.961651, 0.230022, 1)
+text = "ข้างล่างมีไอเทมลับลองลงไปสิ"
+font = ExtResource("6_ad2i4")
+font_size = 250
 outline_size = 0
 uppercase = true
 
@@ -148,10 +203,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8983, 5.76539, -0.792999)
 [node name="Coin5" parent="Coins" instance=ExtResource("5_4fiv6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8983, 9.70155, -9.79296)
 
+[node name="Coin6" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50841, 10.0174, 20.1075)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50841, 10.0174, 18.5649)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48623, 10.0174, 18.5649)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48623, 10.0174, 19.9335)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44982, 10.0174, 17.331)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54352, 10.0174, 18.5788)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54352, 10.0174, 19.9459)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("5_4fiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6394, 2.13701, -35.0592)
+script = ExtResource("10_tse6v")
+
 [node name="GameManager" type="Node3D" parent="."]
 script = ExtResource("6_8fvkd")
 
 [node name="DeadZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.9193, 0)
 script = ExtResource("4_8ry15")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeadZone"]
