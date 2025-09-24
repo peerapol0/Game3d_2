@@ -22,6 +22,7 @@ config/icon="res://Assets/Resources/3DPlatformerStarterIcon.svg"
 
 AudioManager="*res://Scenes/Audio/AudioManager.tscn"
 GameManager="*res://Scripts/GameManager.gd"
+Audio="*res://Scenes/Audio/audio.tscn"
 
 [display]
 

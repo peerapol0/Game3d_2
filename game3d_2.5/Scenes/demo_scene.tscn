@@ -162,7 +162,7 @@ uppercase = true
 [node name="Credits" type="Label3D" parent="Extras"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0336823, 4.71136, 3.61655)
 text = "673380287-8
-นายพีรพล แก้วเจริยสันติสุข"
+นายพีรพล แก้วเจริญสันติสุข"
 font = ExtResource("6_ad2i4")
 font_size = 100
 outline_size = 0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx2ypa63dgfjl"]
+
+[ext_resource type="AudioStream" uid="uid://diwh8tw3xpgtn" path="res://Assets/Audio/SFX/cool-hip-hop-loop-275527.mp3" id="1_qc0l7"]
+
+[node name="Audio" type="AudioStreamPlayer"]
+stream = ExtResource("1_qc0l7")
+volume_db = -80.0
+autoplay = true

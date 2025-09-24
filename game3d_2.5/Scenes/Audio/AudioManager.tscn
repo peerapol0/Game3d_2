@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm1hqybgiajgu"]
+[gd_scene load_steps=5 format=3 uid="uid://bm1hqybgiajgu"]
 
 [ext_resource type="Script" uid="uid://bhurk4k8g2g8i" path="res://Scripts/AudioManager.gd" id="1_iwfhn"]
 [ext_resource type="AudioStream" uid="uid://lnq3qyt6mylm" path="res://Assets/Audio/SFX/jump.ogg" id="1_rkf2p"]
 [ext_resource type="AudioStream" uid="uid://bw1p5rf0tudfx" path="res://Assets/Audio/SFX/coin.ogg" id="3_j83j2"]
+[ext_resource type="AudioStream" uid="uid://diwh8tw3xpgtn" path="res://Assets/Audio/SFX/cool-hip-hop-loop-275527.mp3" id="4_r1463"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_iwfhn")
@@ -16,3 +17,7 @@ pitch_scale = 1.12
 stream = ExtResource("3_j83j2")
 volume_db = -5.0
 pitch_scale = 1.2
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r1463")
+autoplay = true
